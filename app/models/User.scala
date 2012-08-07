@@ -11,7 +11,9 @@ import mongoContext._
 
 case class User(
   id: ObjectId = new ObjectId,
-  email: String
+  email: String,
+  code: String,
+  refcode: Option[String]
 )
 
 object User extends ModelCompanion[User, ObjectId] {

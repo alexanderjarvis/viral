@@ -22,3 +22,15 @@ h1 {
 .row {
 	padding-top: 1.5em;
 }
+
+input[readonly=readonly] {
+	cursor: default;
+}
+
+div#refcode_field {
+	display: none;
+}
+
+.help-inline {
+	color: white;
+}

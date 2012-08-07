@@ -1,4 +1,4 @@
-@(signupForm: Form[UserForm])
+@(signupForm: Form[UserForm], refcode: Option[String])
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -8,12 +8,17 @@
     @helper.form(action = routes.SignUp.submit, 'class -> "form-inline") {
 
         @inputText(
-            signupForm("email"), '_label -> "Be the first to know",
+            signupForm("email"), 
+            '_label -> "Be the first to know",
             '_help -> "",
             'placeholder -> "youremail@example.com"
         )
 
-        <input type="submit" class="btn btn-primary" value="Sign Up">
+        @helper.input(signupForm("refcode")) { (id, name, value, args) =>
+            <input type="hidden" name="@name" id="@id" value="@refcode" @toHtmlArgs(args)>
+        } 
+
+        <input type="submit" class="btn btn-primary" value="Sign Up" />
     }
 
     <script type="text/javascript">

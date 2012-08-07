@@ -1,0 +1,13 @@
+@(code: String)(implicit request: RequestHeader)
+
+@main("Thank you!") {
+
+	<h3>Thank you!</h4>
+	<h4>Want first dibs?</h4>
+	<p>Invite at least 3 friends using your unique code below.</p>
+	<p>The more friends you invite, the sooner you'll get access :)</p>
+	<p/>Copy/paste the link below into Facebook, Twitter, or even an email to your friends</p>
+
+	<input type="text" value=@("http://" + request.host + "/" + code ) onclick="this.select();" readonly="readonly" />
+
+}
