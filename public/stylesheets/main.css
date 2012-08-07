@@ -1,0 +1,24 @@
+body {
+	background-image: url('../images/background.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: #2e3c56;
+	background-position: center top;
+	color: white
+}
+
+h1 {
+	font-family: 'Londrina Shadow', cursive;
+	font-weight: 400;
+	font-size: 800%;
+	line-height: 110%;
+}
+
+.container {
+	padding-top: 2%;
+	padding-left: 10px;
+}
+
+.row {
+	padding-top: 1.5em;
+}
