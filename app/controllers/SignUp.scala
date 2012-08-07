@@ -9,12 +9,14 @@ import views._
 
 import models._
 
+import com.mongodb.casbah.Imports._
+
 object SignUp extends Controller {
 
   val signupForm = Form(
   	mapping(
   	  "email" -> email
-  	)(User.apply)(User.unapply)
+  	)(UserForm.apply)(UserForm.unapply)
   )
   
   def form = Action {
@@ -24,7 +26,13 @@ object SignUp extends Controller {
   def submit = Action { implicit request =>
     signupForm.bindFromRequest.fold(
   	  errors => BadRequest(html.signup.form(errors)),
-  	  user => Ok("success")
+  	  userform => {
+  	  	val user = User(
+  	  		email = userform.email
+	  	)
+  	  	User.save(user)
+  	  	Ok("success")
+  	  }
   	)
   }
 
