@@ -1,0 +1,19 @@
+@(signupForm: Form[User])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Sign Up") {
+    
+    @helper.form(action = routes.SignUp.submit, 'class -> "form-inline") {
+
+        @inputText(
+            signupForm("email"), '_label -> "Be the first to know",
+            '_help -> "",
+            'placeholder -> "youremail@example.com"
+        )
+
+        <input type="submit" class="btn btn-primary" value="Sign Up">
+    }
+    
+}
