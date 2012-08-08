@@ -14,10 +14,10 @@ import com.mongodb.casbah.Imports._
 object SignUp extends Controller {
 
   val signupForm = Form(
-  	mapping(
-  	  "email" -> email,
+    mapping(
+      "email" -> email,
       "refcode" -> optional(text)
-  	)(UserForm.apply)(UserForm.unapply)
+    )(UserForm.apply)(UserForm.unapply)
   )
   
   def form = Action {
@@ -30,17 +30,17 @@ object SignUp extends Controller {
   
   def submit = Action { implicit request =>
     signupForm.bindFromRequest.fold(
-  	  errors => BadRequest(html.signup.form(errors, None)),
-  	  userform => {
-  	  	val user = User(
-  	  		email = userform.email,
+      errors => BadRequest(html.signup.form(errors, None)),
+      userform => {
+        val user = User(
+          email = userform.email,
           code = RandomString.random(5),
           refcode = userform.refcode
-	  	  )
-  	  	User.save(user)
-  	  	Ok(html.signup.success(user.code))
-  	  }
-  	)
+        )
+        User.save(user)
+        Ok(html.signup.success(user.code))
+      }
+    )
   }
 
 }
