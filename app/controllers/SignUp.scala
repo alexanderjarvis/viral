@@ -32,15 +32,29 @@ object SignUp extends Controller {
     signupForm.bindFromRequest.fold(
       errors => BadRequest(html.signup.form(errors, None)),
       userform => {
-        val user = User(
-          email = userform.email,
-          code = RandomString.random(5),
-          refcode = userform.refcode
-        )
-        User.save(user)
-        Ok(html.signup.success(user.code))
+        val existingEmail = User.findOne(MongoDBObject("email" -> userform.email))
+        existingEmail match {
+          case Some(user) => Ok(html.signup.success(user.code))
+          case None => {
+            val formUser = User(
+	          email = userform.email,
+	          code = uniqueCode(5),
+	          refcode = userform.refcode
+	        )
+            User.insert(formUser)
+            Ok(html.signup.success(formUser.code))
+          }
+        }
       }
     )
+  }
+  
+  def uniqueCode(length: Int) : String = {
+    val code = RandomString.random(length)
+    User.findOne(MongoDBObject("code" -> code)) match {
+      case Some(user) => uniqueCode(length)
+      case None => code
+    }
   }
 
 }
