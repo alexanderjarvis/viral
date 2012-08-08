@@ -3,11 +3,16 @@ Viral
 
 Viral is a product launch page that allows users to sign up with their email. Each user is given a unique link to share after signing up in a bid to create a viral loop.
 
-![Launch Page](http://alexanderjarvis.github.com/viral/screenshots/page1.png "Launch Page")
+The project is still a work in progress.
 
-![Viral Link Page](http://alexanderjarvis.github.com/viral/screenshots/page1.png "Viral Link Page")
+MongoDB is used as the datastore.
 
-The project is still a work in progress and uses MongoDB to store the email addresses.
+Screenshots
+-----------
+Launch Page
+![Launch Page](http://alexanderjarvis.github.com/viral/screenshots/page1.png)
+Viral Link Page
+![Viral Link Page](http://alexanderjarvis.github.com/viral/screenshots/page2.png)
 
 Use
 ---
