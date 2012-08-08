@@ -11,6 +11,7 @@ Screenshots
 -----------
 Launch Page
 ![Launch Page](http://alexanderjarvis.github.com/viral/screenshots/page1.png)
+
 Viral Link Page
 ![Viral Link Page](http://alexanderjarvis.github.com/viral/screenshots/page2.png)
 
