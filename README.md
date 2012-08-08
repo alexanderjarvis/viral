@@ -1,7 +1,19 @@
-This is your new Play 2.0 application
+Viral
 =====================================
 
-This file will be packaged with your application, when using `play dist`.
+Viral is a product launch page that allows users to sign up with their email. Each user is given a unique link to share after signing up in a bid to create a viral loop.
+
+![Launch Page](alexanderjarvis.github.com/viral/screenshots/page1.jpg "Launch Page")
+
+![Viral Link Page](alexanderjarvis.github.com/viral/screenshots/page1.jpg "Viral Link Page")
+
+The project is still a work in progress and uses MongoDB to store the email addresses.
+
+Use
+---
+
+To use this project, you will need to install [Playframework](http://www.playframework.org)
+and [MongoDB](http://www.mongodb.org)
 
 Copyright and Licence
 ---------------------
