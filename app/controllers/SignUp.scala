@@ -20,8 +20,8 @@ object SignUp extends Controller {
     )(UserForm.apply)(UserForm.unapply)
   )
   
-  def form = Action {
-    Ok(html.signup.form(signupForm, None))
+  def form(fb_ref: Option[String]) = Action {
+    Ok(html.signup.form(signupForm, fb_ref))
   }
 
   def formWithCode(refcode: String) = Action {
