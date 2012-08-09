@@ -4,8 +4,8 @@
 
 # Signup
 GET     /                           controllers.SignUp.form(fb_ref: Option[String])
-POST    /                           controllers.SignUp.submit
 GET     /:refcode                   controllers.SignUp.formWithCode(refcode)
+POST    /signup                     controllers.SignUp.submit
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
