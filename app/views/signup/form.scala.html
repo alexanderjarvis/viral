@@ -16,7 +16,7 @@
 
         @helper.input(signupForm("refcode")) { (id, name, value, args) =>
             <input type="hidden" name="@name" id="@id" value="@refcode" @toHtmlArgs(args)>
-        } 
+        }
 
         <input type="submit" class="btn btn-primary" value="Sign Up" />
     }
